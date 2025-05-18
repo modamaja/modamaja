@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MODA MAJA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+    header {
+      background-color: #e91e63;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+    }
+    nav {
+      background-color: #f8bbd0;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    nav a {
+      margin: 0 20px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #e91e63;
+    }
+    .hero {
+      background-image: url('https://source.unsplash.com/1600x600/?fashion');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .product {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 250px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      background-color: #e91e63;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MODA MAJA</h1>
+    <p>Tu estilo, nuestra pasión</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#coleccion">Colección</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section class="hero" id="inicio">
+    <h1>Descubre la moda que te representa</h1>
+    <p>Tendencias, elegancia y actitud</p>
+  </section>
+
+  <section class="section" id="coleccion">
+    <h2>Nuestra Colección</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://source.unsplash.com/250x300/?fashion,dress" alt="Producto 1">
+        <h3>Vestido Primavera</h3>
+        <p>Elegante y fresco, ideal para el día.</p>
+      </div>
+      <div class="product">
+        <img src="https://source.unsplash.com/250x300/?fashion,coat" alt="Producto 2">
+        <h3>Abrigo de Estilo</h3>
+        <p>Perfecto para un look urbano sofisticado.</p>
+      </div>
+      <div class="product">
+        <img src="https://source.unsplash.com/250x300/?fashion,shoes" alt="Producto 3">
+        <h3>Zapatos Chic</h3>
+        <p>Comodidad y diseño en cada paso.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="nosotros">
+    <h2>Sobre MODA MAJA</h2>
+    <p>Somos una marca dedicada a resaltar la belleza y la confianza de cada persona a través de la moda. Con diseños modernos y materiales de alta calidad, nos esforzamos por ofrecer ropa que hable de ti.</p>
+  </section>
+
+  <section class="section" id="contacto">
+    <h2>Contacto</h2>
+    <p>Email: contacto@modamaja.com</p>
+    <p>Teléfono: +34 600 123 456</p>
+    <p>Instagram: @modamaja</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MODA MAJA - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
