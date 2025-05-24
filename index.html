@@ -1,76 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MODA MAJA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --rosa-principal: #e91e63;
+      --rosa-claro: #f8bbd0;
+      --rosa-pastel: #fce4ec;
+      --rosa-sombra: rgba(233, 30, 99, 0.2);
+      --fuente: 'Montserrat', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fdfdfd;
+      font-family: var(--fuente);
+      background-color: var(--rosa-pastel);
       color: #333;
     }
+
     header {
-      background-color: #e91e63;
+      background-color: var(--rosa-principal);
       color: white;
-      padding: 20px 40px;
+      padding: 30px 40px;
       text-align: center;
+      box-shadow: 0 4px 10px var(--rosa-sombra);
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2rem;
+    }
+
     nav {
-      background-color: #f8bbd0;
+      background-color: var(--rosa-claro);
       display: flex;
       justify-content: center;
-      padding: 10px 0;
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 5px var(--rosa-sombra);
     }
+
     nav a {
-      margin: 0 20px;
+      margin: 0 25px;
       color: #333;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
     }
+
     nav a:hover {
-      color: #e91e63;
+      color: var(--rosa-principal);
     }
+
     .hero {
-      background-image: url('https://source.unsplash.com/1600x600/?fashion');
+      background-image: url('https://source.unsplash.com/1600x600/?fashion,style');
       background-size: cover;
       background-position: center;
       color: white;
-      padding: 80px 20px;
+      padding: 100px 20px;
       text-align: center;
     }
+
     .hero h1 {
-      font-size: 3em;
+      font-size: 3.5rem;
       margin: 0;
+      text-shadow: 2px 2px 5px #00000050;
     }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin: 15px 0 30px;
+      text-shadow: 1px 1px 3px #00000030;
+    }
+
+    .hero .btn {
+      background-color: white;
+      color: var(--rosa-principal);
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px var(--rosa-sombra);
+    }
+
+    .hero .btn:hover {
+      background-color: var(--rosa-claro);
+      transform: translateY(-2px);
+    }
+
     .section {
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: var(--rosa-principal);
+    }
+
     .products {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
     }
+
     .product {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
+      background: white;
+      border-radius: 12px;
       width: 250px;
       padding: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px var(--rosa-sombra);
+      transition: transform 0.3s ease;
     }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
     .product img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
+      margin-bottom: 15px;
     }
+
+    .product h3 {
+      margin: 0 0 10px;
+      color: var(--rosa-principal);
+    }
+
+    .product p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
     footer {
-      background-color: #e91e63;
+      background-color: var(--rosa-principal);
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      nav a {
+        margin: 0 12px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -90,23 +192,26 @@
   <section class="hero" id="inicio">
     <h1>Descubre la moda que te representa</h1>
     <p>Tendencias, elegancia y actitud</p>
+    <button class="btn" onclick="document.getElementById('coleccion').scrollIntoView({ behavior: 'smooth' })">
+      Ver Colección
+    </button>
   </section>
 
   <section class="section" id="coleccion">
     <h2>Nuestra Colección</h2>
     <div class="products">
       <div class="product">
-        <img src="https://source.unsplash.com/250x300/?fashion,dress" alt="Producto 1">
+        <img src="https://source.unsplash.com/250x300/?fashion,dress" alt="Vestido Primavera">
         <h3>Vestido Primavera</h3>
         <p>Elegante y fresco, ideal para el día.</p>
       </div>
       <div class="product">
-        <img src="https://source.unsplash.com/250x300/?fashion,coat" alt="Producto 2">
+        <img src="https://source.unsplash.com/250x300/?fashion,coat" alt="Abrigo de Estilo">
         <h3>Abrigo de Estilo</h3>
         <p>Perfecto para un look urbano sofisticado.</p>
       </div>
       <div class="product">
-        <img src="https://source.unsplash.com/250x300/?fashion,shoes" alt="Producto 3">
+        <img src="https://source.unsplash.com/250x300/?fashion,shoes" alt="Zapatos Chic">
         <h3>Zapatos Chic</h3>
         <p>Comodidad y diseño en cada paso.</p>
       </div>
@@ -115,14 +220,14 @@
 
   <section class="section" id="nosotros">
     <h2>Sobre MODA MAJA</h2>
-    <p>Somos una marca dedicada a resaltar la belleza y la confianza de cada persona a través de la moda. Con diseños modernos y materiales de alta calidad, nos esforzamos por ofrecer ropa que hable de ti.</p>
+    <p>Somos una marca dedicada a resaltar la belleza y la confianza de cada persona a través de la moda. Con diseños modernos, materiales de alta calidad y una pasión por el detalle, buscamos crear ropa que hable de ti y potencie tu estilo único.</p>
   </section>
 
   <section class="section" id="contacto">
     <h2>Contacto</h2>
-    <p>Email: contacto@modamaja.com</p>
-    <p>Teléfono: +34 600 123 456</p>
-    <p>Instagram: @modamaja</p>
+    <p><strong>Email:</strong> contacto@modamaja.com</p>
+    <p><strong>Teléfono:</strong> +34 600 123 456</p>
+    <p><strong>Instagram:</strong> <a href="https://instagram.com/modamaja" target="_blank" style="color: var(--rosa-principal); text-decoration: none;">@modamaja</a></p>
   </section>
 
   <footer>
