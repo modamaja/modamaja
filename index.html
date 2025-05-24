@@ -1,193 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MODA MAJA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --rosa-principal: #e91e63;
-      --rosa-claro: #f8bbd0;
-      --rosa-pastel: #fce4ec;
-      --rosa-sombra: rgba(233, 30, 99, 0.2);
-      --fuente: 'Montserrat', sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      font-family: var(--fuente);
-      background-color: var(--rosa-pastel);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff0f5;
       color: #333;
     }
 
     header {
-      background-color: var(--rosa-principal);
+      background-color: #e91e63;
       color: white;
-      padding: 30px 40px;
+      padding: 20px 40px;
       text-align: center;
-      box-shadow: 0 4px 10px var(--rosa-sombra);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.2rem;
     }
 
     nav {
-      background-color: var(--rosa-claro);
+      background-color: #f8bbd0;
       display: flex;
       justify-content: center;
-      padding: 12px 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 5px var(--rosa-sombra);
+      padding: 10px 0;
     }
 
     nav a {
-      margin: 0 25px;
+      margin: 0 20px;
       color: #333;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.3s ease;
+      font-weight: bold;
     }
 
     nav a:hover {
-      color: var(--rosa-principal);
+      color: #e91e63;
     }
 
     .hero {
-      position: relative;
       background-image: url('https://source.unsplash.com/1600x600/?fashion,style');
       background-size: cover;
       background-position: center;
+      color: white;
       padding: 100px 20px;
       text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      position: relative;
     }
 
-    .hero-overlay {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 40px 20px;
-      border-radius: 15px;
-      color: white;
-      max-width: 600px;
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(233, 30, 99, 0.4); /* filtro rosa */
+      z-index: 1;
+    }
+
+    .hero h1,
+    .hero p {
+      position: relative;
+      z-index: 2;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3em;
       margin: 0;
     }
 
-    .hero p {
-      font-size: 1.3rem;
-      margin: 15px 0 30px;
-    }
-
-    .hero .btn {
-      background-color: white;
-      color: var(--rosa-principal);
-      padding: 12px 24px;
-      border: none;
-      border-radius: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px var(--rosa-sombra);
-    }
-
-    .hero .btn:hover {
-      background-color: var(--rosa-claro);
-      transform: translateY(-2px);
-    }
-
     .section {
-      padding: 60px 20px;
+      padding: 40px 20px;
       text-align: center;
-    }
-
-    .section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      color: var(--rosa-principal);
     }
 
     .products {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
+      gap: 20px;
     }
 
     .product {
-      background: white;
-      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #f8bbd0;
+      border-radius: 10px;
       width: 250px;
       padding: 20px;
-      box-shadow: 0 4px 10px var(--rosa-sombra);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
 
     .product:hover {
-      transform: translateY(-5px);
+      transform: scale(1.03);
     }
 
     .product img {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
+      border-radius: 8px;
     }
 
-    .product h3 {
-      margin: 0 0 10px;
-      color: var(--rosa-principal);
+    /* GALERÍA EN MOSAICO */
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
     }
 
-    .product p {
-      font-size: 0.95rem;
-      color: #555;
+    .galeria-grid img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .galeria-grid img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     footer {
-      background-color: var(--rosa-principal);
+      background-color: #e91e63;
       color: white;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      nav a {
-        margin: 0 12px;
-        font-size: 0.9rem;
-      }
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>MODA MAJA</h1>
     <p>Tu estilo, nuestra pasión</p>
@@ -196,61 +138,55 @@
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#coleccion">Colección</a>
+    <a href="#galeria">Galería</a>
     <a href="#nosotros">Nosotros</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
   <section class="hero" id="inicio">
-    <div class="hero-overlay">
-      <h1>Descubre la moda que te representa</h1>
-      <p>Tendencias, elegancia y actitud</p>
-      <button class="btn" onclick="document.getElementById('coleccion').scrollIntoView({ behavior: 'smooth' })">
-        Ver Colección
-      </button>
-    </div>
+    <h1>Descubre la web que te representa</h1>
+    <p>Tendencias, elegancia y actitud</p>
   </section>
 
   <section class="section" id="coleccion">
     <h2>Nuestra Colección</h2>
     <div class="products">
       <div class="product">
-        <img src="https://unsplash.com/es/fotos/mujer-con-vestido-rojo-sin-mangas-de-pie-sobre-el-suelo-de-hormigon-gris-durante-el-dia-tyfqOL1FAQc" alt="Vestido Primavera">
+        <img src="https://source.unsplash.com/250x300/?fashion,dress" alt="Producto 1">
         <h3>Vestido Primavera</h3>
         <p>Elegante y fresco, ideal para el día.</p>
       </div>
       <div class="product">
-        <img src="https://unsplash.com/es/fotos/una-persona-con-un-abrigo-rojo-sosteniendo-una-taza-de-cafe-c9Pwqu0IwxI">
+        <img src="https://source.unsplash.com/250x300/?fashion,coat" alt="Producto 2">
         <h3>Abrigo de Estilo</h3>
         <p>Perfecto para un look urbano sofisticado.</p>
       </div>
       <div class="product">
-        <img src="https://unsplash.com/es/fotos/una-mujer-con-un-vestido-rojo-esta-sentada-en-un-sofa-blanco-ftjQNez8Q34">
+        <img src="https://source.unsplash.com/250x300/?fashion,shoes" alt="Producto 3">
         <h3>Zapatos Chic</h3>
         <p>Comodidad y diseño en cada paso.</p>
       </div>
-       <div class="products">
-      <div class="product">
-        <img src="https://www.pexels.com/es-es/foto/moda-nina-sentado-modelo-17404740/"<
-        <h3> Vaqueros grises</h3>
-        <p>Pensados para tu comodidad y tu día a día.</p>
+    </div>
+  </section>
+
+  <section class="section" id="galeria">
+    <h2>Galería de Inspiración</h2>
+    <div class="galeria-grid">
+      <img src="https://source.unsplash.com/400x500/?fashion,woman" alt="Moda 1">
+      <img src="https://source.unsplash.com/400x500/?fashion,man" alt="Moda 2">
+      <img src="https://source.unsplash.com/400x500/?fashion,accessories" alt="Moda 3">
+      <img src="https://source.unsplash.com/400x500/?style,outfit" alt="Moda 4">
+      <img src="https://source.unsplash.com/400x500/?fashion,street" alt="Moda 5">
+      <img src="https://source.unsplash.com/400x500/?fashion,runway" alt="Moda 6">
     </div>
   </section>
 
   <section class="section" id="nosotros">
     <h2>Sobre MODA MAJA</h2>
-    <p>Somos una marca dedicada a resaltar la belleza y la confianza de cada persona a través de la moda. Con diseños modernos, materiales de alta calidad y una pasión por el detalle, buscamos crear ropa que hable de ti y potencie tu estilo único.</p>
+    <p>Somos una marca dedicada a resaltar la belleza y la confianza de cada persona a través de la moda. Con diseños modernos y materiales de alta calidad, nos esforzamos por ofrecer ropa que hable de ti.</p>
   </section>
 
   <section class="section" id="contacto">
     <h2>Contacto</h2>
-    <p><strong>Email:</strong> contacto@modamaja.com</p>
-    <p><strong>Teléfono:</strong> +34 600 123 456</p>
-    <p><strong>Instagram:</strong> <a href="https://instagram.com/modamaja" target="_blank" style="color: var(--rosa-principal); text-decoration: none;">@modamaja</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 MODA MAJA - Todos los derechos reservados</p>
-  </footer>
-</body>
-</html>
-
+    <p>Email: contacto@modamaja.com</p>
+    <p>Tel
