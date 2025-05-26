@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MODA MAJA - Tu estilo, nuestra pasión. Moda juvenil, elegante y moderna.">
-  <meta name="keywords" content="moda, ropa, femenina, verano, tendencias, estilo">
+  <meta name="description" content="MODA MAJA - Moda juvenil y atrevida. Tu estilo, nuestra pasión.">
+  <meta name="keywords" content="MODA MAJA, moda, ropa, tendencias, estilo, verano">
   <meta name="author" content="MODA MAJA">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <title>MODA MAJA</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      margin: 0;
       background-color: #fff0f5;
       color: #333;
     }
@@ -19,8 +24,8 @@
     header {
       background-color: #e91e63;
       color: white;
-      padding: 40px 20px;
       text-align: center;
+      padding: 40px 20px;
     }
 
     nav {
@@ -40,7 +45,7 @@
       text-decoration: underline;
     }
 
-    section {
+    main {
       padding: 40px 20px;
       text-align: center;
     }
@@ -50,24 +55,10 @@
       margin-bottom: 20px;
     }
 
-    .coleccion {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .producto {
-      background-color: white;
-      border-radius: 12px;
-      padding: 15px;
-      width: 180px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .producto h4 {
-      color: #d81b60;
+    p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     footer {
@@ -75,12 +66,23 @@
       color: white;
       text-align: center;
       padding: 20px;
+      margin-top: 40px;
     }
 
-    @media (max-width: 600px) {
-      .coleccion {
-        flex-direction: column;
-        align-items: center;
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px;
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 16px;
+        padding: 0 10px;
       }
     }
   </style>
@@ -99,36 +101,12 @@
     <a href="contacto.html">Contacto</a>
   </nav>
 
-  <section>
+  <main>
     <h2>Bienvenida a MODA MAJA</h2>
-    <p>Explora nuestra moda joven, fresca y atrevida. Cada prenda refleja nuestra esencia: femenina, creativa y libre.</p>
-  </section>
-
-  <section>
-    <h2>Colección Destacada</h2>
-    <div class="coleccion">
-      <div class="producto">
-        <h4>Top Rosa</h4>
-        <p>Cómodo, fresco y con mucho estilo.</p>
-      </div>
-      <div class="producto">
-        <h4>Vestido Floral</h4>
-        <p>Ideal para los días de verano.</p>
-      </div>
-      <div class="producto">
-        <h4>Falda Denim</h4>
-        <p>Versátil y combinable con todo.</p>
-      </div>
-      <div class="producto">
-        <h4>Bikini Fucsia</h4>
-        <p>Para brillar en la playa o la piscina.</p>
-      </div>
-      <div class="producto">
-        <h4>Sandalias Chunky</h4>
-        <p>Comodidad y tendencia en tus pies.</p>
-      </div>
-    </div>
-  </section>
+    <p>
+      Explora nuestra moda joven, fresca y atrevida. Cada prenda refleja nuestra esencia: femenina, creativa y libre.
+    </p>
+  </main>
 
   <footer>
     <p>&copy; 2025 MODA MAJA · Todos los derechos reservados</p>
@@ -136,6 +114,7 @@
 
 </body>
 </html>
+
 
 
 
